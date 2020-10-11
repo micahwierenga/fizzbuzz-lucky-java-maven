@@ -1,10 +1,17 @@
 package fizzbuzzLucky;
 
 public class FizzBuzzLucky {
-    public void printSeries(int num) {
+    private String seriesString = "";
+
+    public String printSeries(int num) {
+        String spacer = " ";
         for (int i=1; i<=num; i++) {
-            System.out.println(testDivisorsAndSubstring(i));
+            seriesString += testDivisorsAndSubstring(i);
+            if(i!=num) seriesString += spacer;
         }
+        System.out.println(seriesString);
+
+        return seriesString;
     }
 
     public String testDivisorsAndSubstring(int num) {
